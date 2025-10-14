@@ -6,9 +6,9 @@ hero:
   tagline: "Stories and tips from my adventures around the world"
   actions:
     - theme: brand
-      text: Bellingham Part 1
+      text: Bellingham Part 1a
       link: /articles/article-1
     - theme: brand
-      text: Bellingham Part 2
+      text: Bellingham Part 2a
       link: /articles/article-2
 ---
