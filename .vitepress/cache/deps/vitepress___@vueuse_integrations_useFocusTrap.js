@@ -1,13 +1,12 @@
 import {
   notNullish,
-  toArray,
+  toValue,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-QKXXKPGR.js";
+} from "./chunk-JC2OOGA3.js";
 import {
   computed,
-  shallowRef,
-  toValue,
+  ref,
   watch
 } from "./chunk-XV6CE6JT.js";
 
@@ -1069,8 +1068,8 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
-  const hasFocus = shallowRef(false);
-  const isPaused = shallowRef(false);
+  const hasFocus = ref(false);
+  const isPaused = ref(false);
   const activate = (opts) => trap && trap.activate(opts);
   const deactivate = (opts) => trap && trap.deactivate(opts);
   const pause = () => {
@@ -1087,7 +1086,7 @@ function useFocusTrap(target, options = {}) {
   };
   const targets = computed(() => {
     const _targets = toValue(target);
-    return toArray(_targets).map((el) => {
+    return (Array.isArray(_targets) ? _targets : [_targets]).map((el) => {
       const _el = toValue(el);
       return typeof _el === "string" ? _el : unrefElement(_el);
     }).filter(notNullish);
